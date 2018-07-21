@@ -12,7 +12,7 @@ public class ParentChild extends Parent implements Example{
 		Parent pr = new ParentChild();
 		pr.getMessage();
 	}
-	
+
 	public void getMessage() {
 		System.out.println("In Child getMessage method");
 	}

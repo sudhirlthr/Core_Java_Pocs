@@ -20,6 +20,7 @@ public class TryCatchFinally {
 			throwit();
 		}catch(Exception e) {
 			System.out.println("C");
+			return;
 		}
 		finally {
 			System.out.println("D");
