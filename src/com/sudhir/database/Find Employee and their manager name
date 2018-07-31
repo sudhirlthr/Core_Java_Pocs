@@ -1,0 +1,6 @@
+There is a table contains id, name and manager id. You have to find out Employee name and their manager name.
+
+
+Query : 
+
+select e1.id,e1.name, e2.name from employee e1 left join (select * from employee) e2 ON e2.id=e1.mid order by e1.id;
