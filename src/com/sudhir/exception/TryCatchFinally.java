@@ -24,7 +24,6 @@ public class TryCatchFinally {
 		}
 		finally {
 			System.out.println("D");
-			System.exit(0);
 		}
 		System.out.println("E");
 
