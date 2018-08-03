@@ -4,10 +4,12 @@
 package com.sudhir.hackerearth.capilary.July_21_2018;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.math.BigInteger;
-import java.util.StringTokenizer;
 
 /**
  * @author sudhir
@@ -20,29 +22,54 @@ public class OldAndColdNumbers {
 	 * @throws IOException 
 	 * @throws NumberFormatException 
 	 */
-	public static void main(String[] args) throws NumberFormatException, IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int test = Integer.parseInt(String.valueOf(br.readLine()));
-		while(test-->0) {
-			int n = Integer.parseInt(String.valueOf(br.readLine()));
-			BigInteger[] array = new BigInteger[n];
-			String[] elements = br.readLine().trim().split("\\s+");
-			for(int i=0;i<n;i++)
-				array[i] = new BigInteger(elements[i]);
-			//array = Stream.of(elements.split("\\s+")).mapToInt(Integer::parseInt).toArray();
-			/*int index = 0;
+	public static void main(String[] args) {
+		FileWriter fw = null;
+		BufferedWriter bw = null;
+		try {
+			fw = new FileWriter(new File("/home/sudhir/Desktop/HackerEarth/Capilary/1/Sudhir_Result_2.txt"));
+			bw = new BufferedWriter(fw);
+			File file = new File("/home/sudhir/Desktop/HackerEarth/Capilary/1/Input_2.txt");
+			FileReader fr = new FileReader(file);
+			BufferedReader br = new BufferedReader(fr);
+			//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			int test = Integer.parseInt(String.valueOf(br.readLine()));
+			while(test-->0) {
+				int n = Integer.parseInt(String.valueOf(br.readLine()));
+				BigInteger[] array = new BigInteger[n];
+				String[] elements = br.readLine().trim().split("\\s+");
+				for(int i=0;i<n;i++)
+					array[i] = new BigInteger(elements[i]);
+				//array = Stream.of(elements.split("\\s+")).mapToInt(Integer::parseInt).toArray();
+				/*int index = 0;
 			StringTokenizer token = new StringTokenizer(br.readLine());
 			while(token.hasMoreTokens())
 				array[index++] = new BigInteger(token.nextToken());*/
-				
-			int q = Integer.parseInt(String.valueOf(br.readLine()));
-			while(q-->0) {
-				elements = br.readLine().trim().split("\\s+");
-				int l = Integer.parseInt(elements[0]);
-				int r = Integer.parseInt(elements[1]);
-				System.out.println(getResult(array, l, r));
+
+				int q = Integer.parseInt(String.valueOf(br.readLine()));
+				while(q-->0) {
+					elements = br.readLine().trim().split("\\s+");
+					int l = Integer.parseInt(elements[0]);
+					int r = Integer.parseInt(elements[1]);
+					int result = getResult(array, l, r);
+					//System.out.println(result);
+					bw.write(String.valueOf(result));
+					bw.newLine();
+				}
+
 			}
-			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+			if(bw != null)
+					bw.close();
+			if(fw != null)
+				fw.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		}
 	}
 
