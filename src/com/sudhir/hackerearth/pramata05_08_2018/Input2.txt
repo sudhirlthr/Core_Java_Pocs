@@ -1,0 +1,26 @@
+Find rank of contestant by given number of submissions.
+
+Input:
+9
+tom 5
+jim 9
+Phil 13
+Rick 14
+tom 18
+jim 20
+tom 30
+Rick 36
+phil 37
+
+
+First line contains number of Submission(N). In each line contestant submit their  submission at given time.
+
+The contestant who will submit more will get more points, but if number of points are matching 
+then their time will be considered an also if time is matching then rank will be choosen by contestant 
+alphabatical name.
+
+Output:
+1 Tom
+2 Jim
+3 Phil
+4 Rick
