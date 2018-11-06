@@ -1,0 +1,10 @@
+There is a table contains id, name and gender of Employee.
+ You have to update Employee gender from Male to Female and from Female to Male
+
+
+Query : 
+update employee set gender = CASE gender
+  WHEN 'Femail' THEN 'Mail'
+  WHEN 'Mail' THEN 'Femail'
+  END
+ where gender IN(select gender from employee); 
